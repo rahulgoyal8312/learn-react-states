@@ -6,10 +6,15 @@ const ListItem = ({ data }) => {
 
     const increaseCounterByOne = () => {
         // Add increasing logic
+        setCounter(counter + 1);
     }
 
     const descreaseCounterByOne = () => {
         // Add descreasing logic
+        if(counter <= 0) {
+            return;
+        }
+        setCounter(counter - 1);
     }
 
     return (
