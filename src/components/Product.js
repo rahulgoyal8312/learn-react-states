@@ -11,9 +11,6 @@ const item = {
 const Product = () => {
     return (
         <div className={"product-wrapper"}>
-            <div className={"form"}>
-                {/* Form */}
-            </div>
             <div>
                 <div>
                     <ListItem data={item} />

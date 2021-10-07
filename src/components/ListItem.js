@@ -2,14 +2,14 @@ import AddToCartIcon from "../assets/icons/add_cart.svg"
 import { useState } from "react"
 
 const ListItem = ({ data }) => {
+    const [counter, setCounter] = useState(0)
 
-    const [message, setMessage] = useState("Not added to the cart yet")
+    const increaseCounterByOne = () => {
+        // Add increasing logic
+    }
 
-    // let message = "Not added to the cart yet"
-    const handleClick = () => {
-        // message = "Added to the cart!"
-        setMessage("Added to the Cart!")
-        console.log("Clicked, ", message)
+    const descreaseCounterByOne = () => {
+        // Add descreasing logic
     }
 
     return (
@@ -26,11 +26,15 @@ const ListItem = ({ data }) => {
                     <h3>{data.title}</h3>
                 </div>
             </div>
-            <small className={"cart-message"}>{message}</small>
-            <button className={"cart-add"} onClick={handleClick}>
+            {/* <button className={"cart-add"} onClick={handleClick}>
                 <span>Add to Cart</span>
                 <img src={AddToCartIcon} alt="Cart Icon"/>
-            </button>
+            </button> */}
+            <div className={"cart-addon"}>
+                <button onClick={descreaseCounterByOne}><span>-</span></button>
+                <span className={"counter"}>{counter}</span>
+                <button onClick={increaseCounterByOne}><span>+</span></button>
+            </div>
         </div>
     )
 }
