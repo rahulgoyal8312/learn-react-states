@@ -1,5 +1,6 @@
 import { useState } from "react"
 import ListItem from "./ListItem"
+import Form from "./Form"
 
 // const item = {
 //     id: 0,
@@ -32,61 +33,13 @@ const Product = () => {
             alert("Discounted Price cannot be greater than price")
             return;
         }
+        console.log("Item Updated!", item)
     }
 
     return (
         <div className={"product-wrapper"}>
             <div className={"form"}>
-                <form onSubmit={submitForm}>
-                    <h2>Item Card Details</h2>
-                    <div className={"input-field"}>
-                        <label htmlFor="title">Title</label>
-                        <input 
-                            name="title"
-                            type="text" 
-                            placeholder="Enter Title" 
-                            value={item.title} 
-                            onChange={handleInput}
-                            required
-                        />
-                    </div>
-                    <div className={"input-field"}>
-                        <label htmlFor="price">Price</label>
-                        <input 
-                            name="price"
-                            type="number" 
-                            placeholder="Enter Price" 
-                            value={item.price} 
-                            onChange={handleInput}
-                            required
-                        />
-                    </div>
-                    <div className={"input-field"}>
-                        <label htmlFor="discountPrice">Discount Price</label>
-                        <input 
-                            name="discountedPrice"
-                            type="number" 
-                            placeholder="Enter Discounted Price" 
-                            value={item.discountedPrice} 
-                            onChange={handleInput}
-                            required
-                        />
-                    </div>
-                    <div className={"input-field"}>
-                        <label htmlFor="thumbnail">Thumbnail</label>
-                        <input 
-                            name="thumbnail"
-                            type="text" 
-                            placeholder="Enter Thumbnail name" 
-                            value={item.thumbnail} 
-                            onChange={handleInput}
-                            required
-                        />
-                    </div>
-                    <div className={"submit-wrap"}>
-                        <button>Update</button>
-                    </div>
-                </form>
+                <Form item={item} onChangeInput={handleInput} onFormSubmission={submitForm}/>
             </div>
             <div>
                 <div>
